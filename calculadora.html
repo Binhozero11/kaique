@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            background-color: #ffffff;
+        }
+       
+        
+        .resultado {
+            background-color: black;
+            color: white;
+            border: 1px solid; 
+            border-bottom: none;
+            padding: 30px;
+            font-size: 20px;
+            text-align: right;
+            width: 252px;
+        }
+        .numbers {
+            background-color: white;
+            color: black;
+            display: inline-block; 
+            border: 1px solid; 
+            padding: 5px;
+            width: 75px;
+        }
+
+        .actions {
+            background-color: #cecece;
+            display: inline-block; 
+            border: 1px solid; 
+            padding: 5px;
+            
+            width: 75px;
+
+        }
+        
+        
+    </style>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div id="calculator-keys" class="calculator-keys">
+
+        <div id="resultado" class="resultado"></div>
+
+        <button id="btn-soma" class="actions" onclick="inserir('+')">+</button>
+        <button id="btn-subtracao" class="actions" onclick="inserir('-')">-</button>
+        <button id="btn-multiplicacao" class="actions" onclick="inserir('*')">*</button>
+        <button id="btn-divisao" class="actions" onclick="inserir('/')">/</button>
+
+
+      
+        <div>
+            <button  class="numbers" id="7" onclick="inserir('7')">7</button>
+            <button  class="numbers" id="8" onclick="inserir('8')">8</button>
+            <button  class="numbers" id="9" onclick="inserir('9')">9</button>
+        </div>
+        <div>
+            <button  class="numbers" id="4" onclick="inserir('4')">4</button>
+            <button  class="numbers" id="5" onclick="inserir('5')">5</button>
+            <button  class="numbers" id="6" onclick="inserir('6')">6</button>
+        </div>
+        <div>
+            <button  class="numbers" id="1" onclick="inserir('1')">1</button>
+            <button  class="numbers" id="2" onclick="inserir('2')">2</button>
+            <button  class="numbers" id="3" onclick="inserir('3')">3</button>
+        </div>
+        <div>
+            <button  class="numbers" id="0" onclick="inserir('0')">0</button>
+            <button  class="numbers" onclick="clean()">AC</button>
+            <button  class="numbers" id="igualdade" onclick="operando()" >=</button>
+        </div>
+        <div>
+            
+    
+    </div>
+    <script>
+       
+       function inserir(num)
+       {
+        const resultado = document.getElementById('resultado').innerHTML;
+        document.getElementById('resultado').innerHTML = resultado + num;
+       }
+
+       function clean() {
+       document.getElementById('resultado').innerHTML = ""
+        
+       }
+
+       function operando() {
+        const resultado = document.getElementById('resultado').innerHTML;
+        if (resultado) {
+            document.getElementById('resultado').innerHTML = eval(resultado)
+
+        }
+        
+       }
+
+        
+       
+
+
+
+
+        
+    </script>
+</body>
+</html>
